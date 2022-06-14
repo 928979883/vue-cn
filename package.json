@@ -1,5 +1,5 @@
 {
-  "name": "vue-cn",
+  "name": "template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "core-js": "^3.8.3",
     "element-ui": "^2.15.9",
     "less": "^4.1.3",
+    "less-loader": "^5.0.0",
     "vue": "^2.6.14",
     "vue-router": "^3.2.0"
   },
