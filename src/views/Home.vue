@@ -21,16 +21,25 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-    .el-header, .el-footer {
-      background-color: #B3C0D1;
-      color: #333;
-      text-align: center;
-      line-height: 60px;
+    .el-header{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        padding: 0;
+        color: #333;
+        text-align: center;
+    }
+     .el-footer {
+        padding: 0;
+        background-color: #B3C0D1;
+        color: #333;
+        text-align: center;
     }
     .el-main {
-      background-color: #E9EEF3;
-      color: #333;
-      text-align: center;
-      line-height: 160px;
+        padding: 0;
+        margin-top: 60px;
+        background-color: #E9EEF3;
+        color: #333;
+        text-align: center;
     }
 </style>

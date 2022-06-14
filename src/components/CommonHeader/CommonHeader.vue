@@ -1,16 +1,33 @@
 <template lang="">
+  <div class="CommonHeader">
+    <div class="logo">
+      <img src="../../assets/img/logo.png" alt="">
+    </div>
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
 
-        <el-menu-item v-for="item in noChildren" :index="item.path" :key="item.path">{{item.label}}</el-menu-item>
+      <el-menu-item v-for="item in noChildren" :index="item.path" :key="item.path">{{item.label}}</el-menu-item>
 
-        <el-submenu v-for="item in hasChildren" :index="item.label" :key="item.label">
-          <template slot="title">{{item.label}}</template>
-          <el-menu-item v-for="(subItem,subIndex) in item.children" :key="subItem.path" :index="subItem.path">{{subItem.label}}</el-menu-item>
-        </el-submenu>
+      <el-submenu v-for="item in hasChildren" :index="item.label" :key="item.label">
+        <template slot="title">{{item.label}}</template>
+        <el-menu-item v-for="(subItem,subIndex) in item.children" :key="subItem.path" :index="subItem.path">{{subItem.label}}</el-menu-item>
+      </el-submenu>
 
-        <el-menu-item index="7">联系我们</el-menu-item>
-      </el-menu>
+      <el-menu-item index="7">联系我们</el-menu-item>
+    </el-menu>
+    <div class="title">
+      <img src="../../assets/img/logo1.png" alt="">
+    </div>
+  </div>
+
 </template>
+<style lang="less" scoped>
+  .el-menu-demo .el-menu--horizontal .el-menu{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    border: none;
+  }
+</style>
 <script>
 export default {
     data() {
@@ -135,6 +152,25 @@ export default {
     },
 }
 </script>
-<style lang="">
-    
+<style lang="less" scoped>
+    .CommonHeader{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .logo{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+          width: 55px;
+        }
+      }
+      .title{
+        width: 20%;
+        img{
+          height: 40px;
+        }
+      }
+    }
 </style>
