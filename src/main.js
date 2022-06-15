@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import {Button ,Header ,Main ,Footer ,Menu ,MenuItem ,Container ,Submenu ,} from 'element-ui';
+//引入css公共文件
+import './assets/css/base/base.css'
+import {Button ,Header ,Main ,Footer ,Menu ,MenuItem ,Container ,Submenu ,Select ,Option ,} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import router from './router'
 Vue.use(Button)
@@ -11,6 +13,8 @@ Vue.use(Footer)
 Vue.use(Menu)
 Vue.use(MenuItem)
 Vue.use(Submenu)
+Vue.use(Select)
+Vue.use(Option)
 
 Vue.config.productionTip = false
 

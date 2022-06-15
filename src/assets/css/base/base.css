@@ -1,0 +1,25 @@
+body,ul,il,p,h1,h2,h3{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+body{
+    background-color: white;
+    color: rgb(70 70 70);
+    /* 默认字体 */
+    font-family: Source Han Sans CN;
+    margin: 0 auto;
+}
