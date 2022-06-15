@@ -10,7 +10,7 @@
 
       <el-submenu v-for="item in hasChildren" :index="item.label" :key="item.label" >
         <template slot="title">{{item.label}}</template>
-        <el-menu-item v-for="(subItem,subIndex) in item.children" :key="subItem.name" :index="subItem.name" @click="clickMenu(subItem.path)">{{subItem.label}}</el-menu-item>
+        <el-menu-item v-for="(subItem,subIndex) in item.children" :key="subItem.name" :index="subItem.name" @click="clickMenu(subItem.path,subIndex)">{{subItem.label}}</el-menu-item>
       </el-submenu>
 
     </el-menu>
@@ -138,12 +138,15 @@ export default {
     },
     methods: {
       handleSelect(key, keyPath) {
-        console.log(key, keyPath);
+        // console.log(key, keyPath);
       },
-      clickMenu(item){
+      clickMenu(value1,value2){
+        console.log(value1,value2);
         this.$router.push({
-          name:item
+          name:value1,
+          query:{id:value2}
         }).catch(data => {  })
+        // this.$router.go(0)
       }
     },
     computed:{
