@@ -1,8 +1,10 @@
 <template lang="">
   <div class="CommonHeader">
     <div class="logo">
-      <img src="" alt="">
-      公司LOGO
+      <router-link to="/">
+        <img src="" alt="">
+        公司LOGO
+      </router-link>
     </div>
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="" text-color="black">
 
@@ -45,7 +47,7 @@
 export default {
     data() {
         return {
-            activeIndex: 'Home',
+            activeIndex: '',
             menu:[
             {
               path: 'Home',
@@ -141,12 +143,13 @@ export default {
         // console.log(key, keyPath);
       },
       clickMenu(value1,value2){
-        console.log(value1,value2);
         this.$router.push({
           name:value1,
           query:{id:value2}
         }).catch(data => {  })
-        // this.$router.go(0)
+        // setTimeout(function () {
+        //     window.location.reload();
+        // },50);
       }
     },
     computed:{
@@ -160,26 +163,27 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-    .CommonHeader{
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      .logo{
-        width: 20%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 26px;
-        img{
-          width: 55px;
-        }
-      }
-      .title{
-        width: 20%;
-        font-size: 26px;
-        img{
-          height: 40px;
-        }
-      }
+.CommonHeader{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .logo{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    img{
+      width: 55px;
     }
+  }
+  .title{
+    width: 20%;
+    font-size: 26px;
+    img{
+      height: 40px;
+    }
+  }
+}
 </style>

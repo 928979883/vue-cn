@@ -35,7 +35,7 @@
             </div>
 
             <div class="right">
-                <img src="../../assets/img/ewm.jpg" alt="">
+                <img src="../../assets/images/ewm.jpg" alt="">
             </div>
 
         </div>
@@ -80,7 +80,14 @@ export default {
     }
 </style>
 <style lang="less" scoped>
+/* 渐显动画 */
+@keyframes wrapper-gradient {
+    0% {transform: translateY(100%);}
+    100% {transform: translateY(0);}
+}
 .CommonFooter{
+    overflow: hidden;
+    animation: wrapper-gradient .8s linear;
     position: relative;
     padding-bottom: 65px;
     padding-top: 20px;
