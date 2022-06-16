@@ -19,8 +19,6 @@ img{
 }
 body{
     background-color: white;
-    color: rgb(70 70 70);
     /* 默认字体 */
     font-family: Source Han Sans CN;
-    margin: 0 auto;
 }

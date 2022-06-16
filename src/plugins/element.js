@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import 'element-ui/lib/theme-chalk/index.css';
-import {Button ,Header ,Main ,Footer ,Menu ,MenuItem ,Container ,Submenu ,Select ,Option ,Tabs ,TabPane ,Form ,FormItem ,Col ,Switch ,Checkbox ,Radio ,Input ,TimePicker ,DatePicker ,} from 'element-ui';
+import {Button ,Header ,Main ,Footer ,Menu ,MenuItem ,Container ,Submenu ,Select ,Option ,Tabs ,TabPane ,Form ,FormItem ,Col ,Switch ,Checkbox ,Radio ,Input ,TimePicker ,DatePicker , CheckboxGroup ,RadioGroup ,CheckboxButton ,} from 'element-ui';
 
 Vue.use(Button)
 Vue.use(Container)
@@ -23,3 +23,7 @@ Vue.use(Radio)
 Vue.use(Input)
 Vue.use(TimePicker)
 Vue.use(DatePicker)
+Vue.use(CheckboxGroup)
+Vue.use(RadioGroup)
+Vue.use(CheckboxButton)
+
