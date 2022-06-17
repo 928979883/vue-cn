@@ -49,6 +49,15 @@
                     </el-tab-pane>
                     <el-tab-pane label="我要报修" name=1>
                         <p>客户报修相关信息及联系方式</p>
+                        <div class="button">Center -> out</div>
+                        <div class="button">Left -> Right -> Left</div>
+                        <div class="button">Left -> Right -> Right</div>
+                        <div class="button">Top -> Bottom -> Top</div>
+                        <div class="button">Skew Fill Left -> Right</div>
+                        <div class="button">Rounded Corners</div>
+                        <div class="button">Scale</div>
+                        <div class="button">Border (Inner Shadow)</div>
+                        <div class="button">Border (Outer Shadow)</div>
                     </el-tab-pane>
                     <el-tab-pane label="投诉建议" name=2>
                         <p>客户留言</p>
@@ -199,4 +208,85 @@ export default {
     .box1{
 
     }
+    .button {
+            flex: 1 1 auto;
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid #f7f7f7;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .button:after {
+            position: absolute;
+            transition: 0.3s;
+            content: "";
+            width: 0;
+            left: 50%;
+            bottom: 0;
+            height: 3px;
+            background: aqua !important;
+        }
+        .button:nth-of-type(2):after {
+            left: 0;
+        }
+        .button:nth-of-type(3):after {
+            right: 0;
+            left: auto;
+        }
+        .button:nth-of-type(4):after {
+            left: 0;
+            bottom: auto;
+            top: -3px;
+            width: 100%;
+        }
+        .button:nth-of-type(5):after {
+            height: 120%;
+            left: -10%;
+            transform: skewX(15deg);
+            z-index: -1;
+        }
+        .button:hover {
+            cursor: pointer;
+        }
+        .button:hover:after {
+            width: 100%;
+            left: 0;
+        }
+        .button:hover:nth-of-type(4):after {
+            top: calc(100% - 3px);
+            }
+        .button:hover:nth-of-type(5) {
+            color: #5bcaff;
+        }
+        .button:hover:nth-of-type(5):after {
+            left: -10%;
+            width: 120%;
+        }
+        .button:hover:nth-of-type(6) {
+            border-radius: 30px;
+        }
+        .button:hover:nth-of-type(6):after {
+            width: 0%;
+        }
+        .button:hover:nth-of-type(7) {
+            transform: scale(1.2);
+        }
+        .button:hover:nth-of-type(7):after {
+            width: 0%;
+        }
+        .button:hover:nth-of-type(8) {
+            box-shadow: inset 0px 0px 0px 3px #50b961;
+        }
+        .button:hover:nth-of-type(8):after {
+            width: 0%;
+        }
+        .button:hover:nth-of-type(9) {
+            box-shadow: 0px 0px 0px 3px #50b961;
+        }
+        .button:hover:nth-of-type(9):after {
+            width: 0%;
+        }
 </style>

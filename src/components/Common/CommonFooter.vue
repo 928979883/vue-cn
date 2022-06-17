@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="CommonFooter">
+    <div class="CommonFooter" id                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      :class="[up ==true?'active1':'']">
         <div class="top">
             <div class="aboutus">关于我们</div>
             <div class="contact">联系我们</div>
@@ -24,12 +24,12 @@
                         <li>公司地址：</li>
                     </ul>
                     <ul>
-                        <li>办公（投诉）电话：</li>
-                        <li>电子邮箱：</li>
+                        <li>办公（投诉）电话：6227288 6106859</li>
+                        <li>电子邮箱：442695648@qq.com</li>
                     </ul>
                     <ul>
-                        <li>邮政编码：</li>
-                        <li>公司网址：</li>
+                        <li>邮政编码：442600</li>
+                        <li>公司网址：www.**********.com</li>
                     </ul>
                 </div>
             </div>
@@ -48,10 +48,12 @@
 </template>
 <script>
 import wave from '../Common/Wave'
+import $ from 'jquery'
 
 export default {
     data() {
         return {
+            up:false,
             typeList:[
                 {id:1,name:'网站一',},
                 {id:2,name:'网站二',},
@@ -59,7 +61,20 @@ export default {
             selected:''
         }
     },
+    mounted() {
+        window.vue = this
+        window.addEventListener('scroll',this.scrollhandle)
+    },
     methods: {
+        scrollhandle(){
+            let osTop =document.documentElement.scrollTop || document.body.scrollTop;
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            let total = window.screen.availHeight+scrollTop
+            let totop = document.body.scrollHeight-10
+            if(total>totop){
+                this.up=true;
+            }
+        },
         getTypeSelected(){
             if(this.selected==1){
                 window.open('http://www.baidu.com')
@@ -67,7 +82,7 @@ export default {
                 window.open('http://www.baidu.com')
             }
             console.log(this.selected)
-        }
+        },
     },
     components:{
         wave,
@@ -85,14 +100,16 @@ export default {
     0% {transform: translateY(100%);}
     100% {transform: translateY(0);}
 }
-.CommonFooter{
-    overflow: hidden;
+.active1{
+    visibility: visible !important;
     animation: wrapper-gradient .8s linear;
+}
+.CommonFooter{
+    visibility:hidden;
     position: relative;
     padding-bottom: 65px;
     padding-top: 20px;
     width: 100%;
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,10 +170,20 @@ export default {
 
         }
         .right{
-            width: 20%;
+            width:200px;
+            height:200px;
+            overflow:hidden;
             img{
-                width: 50%;
+                width:200px;
+                height:200px;
+                transition:all .4s;
+                -moz-transition:all .4s;
+                -webkit-transition:all .4s;
+                -o-transition:all .4s;
             }
+        }
+        .right img:hover {
+            transform:scale(1.2);
         }
         .copyright{
                 position: absolute;

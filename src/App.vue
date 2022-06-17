@@ -9,6 +9,9 @@
       </el-main>
       <el-footer style="height: auto;">
           <CommonFooter></CommonFooter>
+          <div class="to_top" v-if="showBtn" @click="toTop">
+            <img src="./assets/images/totop.png" alt="">
+          </div>
       </el-footer>
     </el-container>
   </div>
@@ -22,6 +25,7 @@ export default {
   data() {
     return {
       showlogo:false,
+      showBtn: false,
     }
   },
   watch: {
@@ -36,8 +40,33 @@ export default {
   mounted() {
     window.vue = this
     window.addEventListener('scroll',this.scrollhandle)
+    window.addEventListener("scroll", this.showbtn, true);
   },
   methods: {
+    showbtn() {
+        let that = this;
+        let scrollTop =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop;
+        that.scrollTop = scrollTop;
+        if (scrollTop > 100) {
+            this.showBtn = true;
+        } else {
+            this.showBtn = false;
+        }
+      },
+      toTop() {
+        var timer = setInterval(function () {
+          let osTop =document.documentElement.scrollTop || document.body.scrollTop;
+          let ispeed = Math.floor(-osTop / 5);
+          document.documentElement.scrollTop = document.body.scrollTop =osTop + ispeed;
+          this.isTop = true;
+          if (osTop === 0) {
+              clearInterval(timer);
+          }
+        }, 30);
+      },
     scrollhandle(){
         if(this.$route.path=='/'){
             if(window.scrollY>0){
@@ -58,6 +87,10 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+@keyframes wrapper-gradient {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(0);}
+}
   .active{
     transition:  1.5s;
     top: 5% !important;
@@ -78,15 +111,26 @@ export default {
       text-align: center;
   }
    .el-footer {
-      height: 100%;
+      overflow: hidden;
+      height: 300px;
       padding: 0;
-      background-color: #252b3a;
+      background-color: #c3e1ff;
       color: #333;
       text-align: center;
   }
   .el-main {
       padding: 0;
+      height: 100%;
       color: #333;
       text-align: center;
   }
+  .to_top{
+        animation: wrapper-gradient .5s linear;
+        position: fixed;
+        bottom: 55px;
+        right: 20px;
+        img{
+          width: 50px;
+        }
+    }
 </style>

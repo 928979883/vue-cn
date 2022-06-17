@@ -2,23 +2,22 @@
   <div class="CommonHeader">
     <div class="logo">
       <router-link to="/">
-        <img src="" alt="">
-        公司LOGO
+        <img src="../../assets/images/logo.png" alt="">
+        丰源供水有限公司
       </router-link>
     </div>
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="" text-color="black">
 
       <el-menu-item v-for="item in noChildren" :index="item.name" :key="item.name" @click="clickMenu(item.path)">{{item.label}}</el-menu-item>
 
-      <el-submenu v-for="item in hasChildren" :index="item.label" :key="item.label" >
+      <el-submenu v-for="item in hasChildren" :index="item.label" :key="item.index" >
         <template slot="title">{{item.label}}</template>
         <el-menu-item v-for="(subItem,subIndex) in item.children" :key="subItem.name" :index="subItem.name" @click="clickMenu(subItem.path,subIndex)">{{subItem.label}}</el-menu-item>
       </el-submenu>
 
     </el-menu>
     <div class="title">
-      <img src="" alt="">
-      公司副LOGO
+      <img src="../../assets/images/logo1.png" alt="">
     </div>
   </div>
 
@@ -55,84 +54,93 @@ export default {
               label: '首页',
             },
             {
-              label: '父标题2',
+              label: '公司简介',
               children: [
                 {
                   path: 'page1',
                   name: '2-1',
-                  label: '子标题1',
+                  label: '公司概况',
                 },
                 {
                   path: 'page1',
                   name: '2-2',
-                  label: '子标题2',
+                  label: '班子分工',
                 },
                 {
                   path: 'page1',
                   name: '2-3',
-                  label: '子标题3',
+                  label: '科室组成',
+                },
+                {
+                  path: 'page1',
+                  name: '2-4',
+                  label: '员工风采',
                 },
             ]},
             {
-              label: '父标题3',
+              label: '信息中心',
               children: [
                 {
                   path: 'page2',
                   name: '3-1',
-                  label: '子标题1',
+                  label: '最新动态',
                 },
                 {
                   path: 'page2',
                   name: '3-2',
-                  label: '子标题2',
+                  label: '政务公开',
                 },
                 {
                   path: 'page2',
                   name: '3-3',
-                  label: '子标题3',
-                },
-                {
-                  path: 'page2',
-                  name: '3-4',
-                  label: '子标题4',
+                  label: '水价标准',
                 },
             ]},
             {
-              label: '父标题4',
+              label: '网上营业厅',
               children: [
                 {
                   path: 'page3',
                   name: '4-1',
-                  label: '子标题1',
-                },
-                {
-                  path: 'page3',
-                  name: '4-2',
-                  label: '子标题2',
-                },
-                {
-                  path: 'page3',
-                  name: '4-3',
-                  label: '子标题3',
+                  label: '我要缴费',
                 },
             ]},
             {
-              label: '父标题5',
+              label: '疫情防控',
               children: [
                 {
                   path: 'page4',
                   name: '5-1',
-                  label: '子标题1',
+                  label: '“三费”大厅防控',
                 },
                 {
                   path: 'page4',
                   name: '5-2',
-                  label: '子标题2',
+                  label: '生产区域风控',
                 },
                 {
                   path: 'page4',
                   name: '5-3',
-                  label: '子标题3',
+                  label: '疫情排查与宣传',
+                },
+            ]},
+            {
+              label: '营商环境',
+              children: [
+                {
+                  path: 'page4',
+                  name: '6-1',
+                  label: '我要报装',
+                },
+                {
+                  path: 'page4',
+                  name: '6-2',
+                  label: '我要报修',
+                },
+                {
+                  path: 'page4',
+                  name: '6-3',
+                  label: '投诉建议',
                 },
             ]},
             ]
@@ -174,15 +182,19 @@ export default {
     align-items: center;
     justify-content: center;
     font-size: 26px;
+    a{
+      display: flex;
+      align-items: center;
+    }
     img{
-      width: 55px;
+      width: 60px;
     }
   }
   .title{
     width: 20%;
     font-size: 26px;
     img{
-      height: 40px;
+      height: 60px;
     }
   }
 }
