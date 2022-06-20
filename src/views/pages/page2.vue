@@ -14,24 +14,24 @@
                         <ul>
                             <li>
                                 <div class="content">
-                                    <div class="title">标题</div>
-                                    <div class="detail">描述概况</div>
+                                    <div class="title">保障供水 护航高考</div>
+                                    <div class="detail">供水公司衷心祝愿广大莘莘学子十年寒窗、金榜题名！</div>
                                 </div>
-                                <div class="time"><span>发布时间：</span>XXXX年XX月XX日</div>
+                                <div class="time"><span>发布时间：</span>2022-06-07</div>
                             </li>
                             <li>
                                 <div class="content">
-                                    <div class="title">标题</div>
-                                    <div class="detail">描述概况</div>
+                                    <div class="title">加大巡查力度 确保“两考”供水安全</div>
+                                    <div class="detail">及时消除安全隐患，保障“两考”供水安全</div>
                                 </div>
-                                <div class="time"><span>发布时间：</span>XXXX年XX月XX日</div>
+                                <div class="time"><span>发布时间：</span>2022-05-31</div>
                             </li>
                             <li>
                                 <div class="content">
-                                    <div class="title">标题</div>
-                                    <div class="detail">描述概况</div>
+                                    <div class="title">全国城市节约用水宣传周-节水你我</div>
+                                    <div class="detail">宣传主题为“建设节水型城市，推动绿色低碳发展”</div>
                                 </div>
-                                <div class="time"><span>发布时间：</span>XXXX年XX月XX日</div>
+                                <div class="time"><span>发布时间：</span>2022-05-16</div>
                             </li>
                         </ul>
                     </el-tab-pane>
@@ -40,28 +40,30 @@
                         <ul>
                             <li>
                                 <div class="content">
-                                    <div class="title">标题</div>
-                                    <div class="detail">描述概况</div>
+                                    <div class="title">停水公告</div>
+                                    <div class="detail">于18日晚21时至19日早8点停水施工</div>
                                 </div>
-                                <div class="time"><span>发布时间：</span>XXXX年XX月XX日</div>
+                                <div class="time"><span>发布时间：</span>2022-03-18</div>
                             </li>
                             <li>
                                 <div class="content">
-                                    <div class="title">标题</div>
-                                    <div class="detail">描述概况</div>
+                                    <div class="title">公 告</div>
+                                    <div class="detail">为您提供高效、快捷的用水服务!</div>
                                 </div>
-                                <div class="time"><span>发布时间：</span>XXXX年XX月XX日</div>
+                                <div class="time"><span>发布时间：</span>2022-01-22</div>
                             </li>
                             <li>
                                 <div class="content">
-                                    <div class="title">标题</div>
-                                    <div class="detail">描述概况</div>
+                                    <div class="title">缴费方式指南</div>
+                                    <div class="detail">地址：湖北省十堰市郧西县城关镇人民街229号</div>
                                 </div>
-                                <div class="time"><span>发布时间：</span>XXXX年XX月XX日</div>
+                                <div class="time"><span>发布时间：</span>2022-01-12</div>
                             </li>
                         </ul>
                     </el-tab-pane>
-                    <el-tab-pane label="水价标准" name=2>水价标准</el-tab-pane>
+                    <el-tab-pane label="水价标准" name=2>
+                        <img src="../../assets/images/water_price.jpg" alt="">
+                    </el-tab-pane>
                   </el-tabs>
             </div>
         </el-main>
@@ -117,6 +119,9 @@ export default {
         }
     }
     .box1{
+        img{
+            width: 50%;
+        }
         p{
             font-size: 22px;
         }

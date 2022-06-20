@@ -3,7 +3,7 @@
     <div class="logo">
       <router-link to="/">
         <img src="../../assets/images/logo.png" alt="">
-        丰源供水有限公司
+        郧西县丰源供水有限公司
       </router-link>
     </div>
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="" text-color="black">
@@ -11,8 +11,8 @@
       <el-menu-item v-for="item in noChildren" :index="item.name" :key="item.name" @click="clickMenu(item.path)">{{item.label}}</el-menu-item>
 
       <el-submenu v-for="item in hasChildren" :index="item.label" :key="item.index" >
-        <template slot="title">{{item.label}}</template>
-        <el-menu-item v-for="(subItem,subIndex) in item.children" :key="subItem.name" :index="subItem.name" @click="clickMenu(subItem.path,subIndex)">{{subItem.label}}</el-menu-item>
+        <template slot="title" >{{item.label}}</template>
+        <el-menu-item v-for="(subItem,subIndex) in item.children" :key="subItem.name" :index="subItem.name" @click="clickMenu(subItem.path,subIndex)" >{{subItem.label}}</el-menu-item>
       </el-submenu>
 
     </el-menu>
@@ -36,10 +36,10 @@
     border: none;
   }
   .el-menu--horizontal>.el-menu-item{
-    /* color: white; */
+    font-size: 20px;
   }
-  .el-menu--horizontal>.el-submenu>.el-submenu__title{
-    color: white;
+  .el-menu--horizontal>.el-submenu /deep/.el-submenu__title{
+    font-size: 20px !important;
   }
 </style>
 <script>
@@ -128,17 +128,17 @@ export default {
               label: '营商环境',
               children: [
                 {
-                  path: 'page4',
+                  path: 'page5',
                   name: '6-1',
                   label: '我要报装',
                 },
                 {
-                  path: 'page4',
+                  path: 'page5',
                   name: '6-2',
                   label: '我要报修',
                 },
                 {
-                  path: 'page4',
+                  path: 'page5',
                   name: '6-3',
                   label: '投诉建议',
                 },
@@ -181,8 +181,11 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 26px;
+    font-size: 16px;
     a{
+      width: 100%;
+      font-weight: 600;
+      justify-content: space-around;
       display: flex;
       align-items: center;
     }

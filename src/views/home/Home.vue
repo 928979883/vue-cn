@@ -1,11 +1,9 @@
 <template lang="">
     <div class="home">
-        <div class="banner">
-            <wave></wave>
-        </div>
+        <div class="banner"></div>
         <div class="box1">
             <div class="box1-content">
-                <div class="title">郧西县<span>丰源供水有限公司</span></div>
+                <div class="title">丰源供水公司简介</span></div>
                 <div class="detail">郧西县丰源供水有限公司自2002年10月组建成立，由政府出资控股， 2007年
                     4月3日经县人民政府西政发【2007】9号文件批复，县城市管理执法局为城市
                     供水行政主管部门，于2009年6月正式将供水公司从县国资公司的管理、经营
@@ -21,9 +19,10 @@
                     人（最新人口普查数据）。</div>
             </div>
             <div class="img">
-                <el-carousel indicator-position="outside" height="400px">
-                    <el-carousel-item v-for="item in 4" :key="item">
-                      <h3>{{ item }}</h3>
+                <el-carousel indicator-position="outside" height="400px" loop="true">
+                    <el-carousel-item v-for="item in imgList" :key="item">
+                        <img :src="item.url" alt="">
+                        <div class="title">{{item.title}}</div>
                     </el-carousel-item>
                   </el-carousel>
             </div>
@@ -31,11 +30,13 @@
         <div class="box2">
             <p class="box2-title">公告通知</p>
             <div class="content">
-                <p>最新公告</p>
+                <p>最新动态</p>
                 <ul>
                     <li>
-                        <div class="title">保障供水 护航高考</div>
-                        <div class="data">6月6日</div>
+                        <router-link to="news_detail">
+                            <div class="title">保障供水 护航高考</div>
+                            <div class="data">6月6日</div>
+                        </router-link>
                     </li>
                     <li>
                         <div class="title">加大巡查力度 确保“两考”供水安全</div>
@@ -51,15 +52,35 @@
     </div>
 </template>
 <script>
-import wave from '../../components/Common/Wave'
 export default {
     name:'Home',
     data() {
         return {
+            imgList:[
+                {
+                    url:require("../../assets/images/lunbo1.jpg"),
+                    title:'县委书记查宏现场调研供水公司二期扩能项目'
+                },
+                {
+                    url:require("../../assets/images/lunbo2.jpg"),
+                    title:'县纪委派出工作组组长王少应检查督导供水公司防疫工作'
+                },
+                {
+                    url:require("../../assets/images/lunbo3.jpg"),
+                    title:'供水公司支部下沉东方社区开展志愿活动'
+                },
+                {
+                    url:require("../../assets/images/lunbo4.jpg"),
+                    title:'供水公司四堰坪水厂'
+                },
+                {
+                    url:require("../../assets/images/lunbo5.jpg"),
+                    title:'供水公司四堰坪水厂生产车间'
+                },
+            ]
         }
     },
     components:{
-        wave
     },
 }
 </script>
@@ -99,6 +120,7 @@ export default {
         margin: auto;
         display: flex;
         justify-content: center;
+        align-items: center;
         .box1-content{
             padding-right: 30px;
             width: 70%;
@@ -125,7 +147,17 @@ export default {
             box-shadow: 0 0 30px rgb(94 158 255 / 20%);
             width: 100%;
             height: 100%;
-            
+            position: relative;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            .title{
+                font-size: 16px;
+                position: absolute;
+                bottom: 0;
+                color: white;
+            }
         }
     }
     .box2{
@@ -156,6 +188,13 @@ export default {
                     display: flex;
                     justify-content: space-between;
                     border-bottom: 1px lightgray solid;
+                    a{
+                        width: 100%;
+                        line-height: 50px;
+                        font-size: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                    }
                 }
             }
         }

@@ -7,21 +7,43 @@ export default [
     {
         path: '/page1',
         name: 'page1',
-        component: () => import('../../views/page1/page1.vue')
+        meta:{title: '公司简介_郧西县丰源供水有限公司'},
+        component: () => import('../../views/pages/page1.vue')
     },
     {
         path: '/page2',
         name: 'page2',
-        component: () => import('../../views/page2/page2.vue')
+        meta:{title: '信息中心_郧西县丰源供水有限公司'},
+        component: () => import('../../views/pages/page2.vue')
     },
     {
         path: '/page3',
         name: 'page3',
-        component: () => import('../../views/page3/page3.vue')
+        meta:{title: '网上营业厅_郧西县丰源供水有限公司'},
+        component: () => import('../../views/pages/page3.vue')
     },
     {
         path: '/page4',
         name: 'page4',
-        component: () => import('../../views/page4/page4.vue')
+        meta:{title: '疫情防控_郧西县丰源供水有限公司'},
+        component: () => import('../../views/pages/page4.vue')
+    },
+    {
+        path: '/page5',
+        name: 'page5',
+        meta:{title: '营商环境_郧西县丰源供水有限公司'},
+        component: () => import('../../views/pages/page5.vue')
+    },
+    {
+        path: '/page6',
+        name: 'page6',
+        meta:{title: '联系我们_郧西县丰源供水有限公司'},
+        component: () => import('../../views/pages/page6.vue')
+    },
+    {
+        path: '/news_detail',
+        name: 'news_detail',
+        meta:{title: '资讯详情_郧西县丰源供水有限公司'},
+        component: () => import('../../views/pages/news_detail.vue')
     },
 ]

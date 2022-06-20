@@ -114,7 +114,6 @@ export default {
       overflow: hidden;
       height: 300px;
       padding: 0;
-      background-color: #c3e1ff;
       color: #333;
       text-align: center;
   }

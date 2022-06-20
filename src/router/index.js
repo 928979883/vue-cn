@@ -8,6 +8,7 @@ const routes = [
     {
         path: '/',
         name: 'Home',
+        meta:{title: '郧西县丰源供水有限公司'},
         component: () => import('../views/home/Home.vue')
     },
     ...pages

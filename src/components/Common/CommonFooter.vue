@@ -1,13 +1,17 @@
 <template lang="">
-    <div class="CommonFooter" id                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      :class="[up ==true?'active1':'']">
+    <div class="CommonFooter" :class="[up ==true?'active1':'']">
         <div class="top">
-            <div class="aboutus">关于我们</div>
-            <div class="contact">联系我们</div>
+            <router-link to="page6">
+                <div class="aboutus">关于我们 >></div>
+            </router-link>
+            <router-link to="page6">
+                <div class="contact">联系我们 >></div>
+            </router-link>
         </div>
         
         <div class="main">
             <div class="left">
-                <div class="tel">服务热线：XXXXXXXXXXX</div>
+                <div class="tel">服务热线：0719-6227288</div>
                 <div class="link">
                     <p>友情链接：</p>
                     <select v-model="selected" @change="getTypeSelected" class="select">
@@ -21,15 +25,15 @@
             <div class="middle">
                 <div class="info">
                     <ul>
-                        <li>公司地址：</li>
+                        <li>公司地址：郧西县城关镇人民街229号"三费"大厅</li>
                     </ul>
                     <ul>
-                        <li>办公（投诉）电话：6227288 6106859</li>
+                        <li>办公（投诉）电话：0719-6234820</li>
                         <li>电子邮箱：442695648@qq.com</li>
                     </ul>
                     <ul>
                         <li>邮政编码：442600</li>
-                        <li>公司网址：www.**********.com</li>
+                        <li>公司网址：www.yxfygs001.com</li>
                     </ul>
                 </div>
             </div>
@@ -47,7 +51,7 @@
     </div>
 </template>
 <script>
-import wave from '../Common/Wave'
+import wave from '../wave/blue_wave'
 import $ from 'jquery'
 
 export default {
@@ -105,9 +109,10 @@ export default {
     animation: wrapper-gradient .8s linear;
 }
 .CommonFooter{
+    border-top: #005fa3 3px solid;
     visibility:hidden;
     position: relative;
-    padding-bottom: 65px;
+    padding-bottom: 80px;
     padding-top: 20px;
     width: 100%;
     display: flex;
@@ -122,7 +127,7 @@ export default {
         width: 80%;
         display: flex;
         justify-content: space-between;
-        border-bottom: 1px solid white; 
+        border-bottom: 1px solid lightgray; 
         .contact{
             padding: 10px 0;
         }

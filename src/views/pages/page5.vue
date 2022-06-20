@@ -3,7 +3,7 @@
         <el-header style="height: auto;">
             <div class="banner">
                 <!-- <img src="" alt=""> -->
-                Page4-Banner
+                Page5-Banner
             </div>
         </el-header>
         <el-main>
