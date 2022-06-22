@@ -49,13 +49,13 @@
                     </el-tab-pane>
                     <el-tab-pane label="我要报修" name=1>
                         <p>客户报修相关信息及联系方式</p>
-                        <div class="button">Center -> out</div>
-                        <div class="button">Left -> Right -> Left</div>
-                        <div class="button">Left -> Right -> Right</div>
-                        <div class="button">Top -> Bottom -> Top</div>
-                        <div class="button">Skew Fill Left -> Right</div>
-                        <div class="button">Rounded Corners</div>
-                        <div class="button">Scale</div>
+                        <div class="button">中下->两边->向内</div>
+                        <div class="button">左下->右下->左下</div>
+                        <div class="button">左下->右下->右下</div>
+                        <div class="button">上->下->上</div>
+                        <div class="button">左下->倾斜填充->右上</div>
+                        <div class="button">圆角</div>
+                        <div class="button">放大</div>
                         <div class="button">Border (Inner Shadow)</div>
                         <div class="button">Border (Outer Shadow)</div>
                     </el-tab-pane>
@@ -209,6 +209,8 @@ export default {
 
     }
     .button {
+            /* background-color: #5bcaff; */
+            cursor: pointer;
             flex: 1 1 auto;
             margin: 10px;
             padding: 20px;
@@ -217,17 +219,21 @@ export default {
             text-transform: uppercase;
             position: relative;
             overflow: hidden;
-            transition: 0.3s;
+            transition: 1s;
         }
         .button:after {
             position: absolute;
-            transition: 0.3s;
+            transition: 1s;
             content: "";
             width: 0;
             left: 50%;
             bottom: 0;
             height: 3px;
             background: aqua !important;
+        }
+        .button:hover:after {
+            width: 100%;
+            left: 0;
         }
         .button:nth-of-type(2):after {
             left: 0;
@@ -242,24 +248,14 @@ export default {
             top: -3px;
             width: 100%;
         }
+        .button:hover:nth-of-type(4):after {
+            top: calc(100% - 3px);
+        }
         .button:nth-of-type(5):after {
-            height: 120%;
+            height: 100%;
             left: -10%;
             transform: skewX(15deg);
             z-index: -1;
-        }
-        .button:hover {
-            cursor: pointer;
-        }
-        .button:hover:after {
-            width: 100%;
-            left: 0;
-        }
-        .button:hover:nth-of-type(4):after {
-            top: calc(100% - 3px);
-            }
-        .button:hover:nth-of-type(5) {
-            color: #5bcaff;
         }
         .button:hover:nth-of-type(5):after {
             left: -10%;

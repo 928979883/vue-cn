@@ -182,9 +182,6 @@ export default {
                 width:200px;
                 height:200px;
                 transition:all .4s;
-                -moz-transition:all .4s;
-                -webkit-transition:all .4s;
-                -o-transition:all .4s;
             }
         }
         .right img:hover {

@@ -124,6 +124,7 @@ export default {
       text-align: center;
   }
   .to_top{
+        cursor: pointer;
         animation: wrapper-gradient .5s linear;
         position: fixed;
         bottom: 55px;

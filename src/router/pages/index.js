@@ -46,4 +46,16 @@ export default [
         meta:{title: '资讯详情_郧西县丰源供水有限公司'},
         component: () => import('../../views/pages/news_detail.vue')
     },
+    {
+        path: '/news_detail1',
+        name: 'news_detail1',
+        meta:{title: '资讯详情_郧西县丰源供水有限公司'},
+        component: () => import('../../views/pages/news_detail1.vue')
+    },
+    {
+        path: '/news_detail2',
+        name: 'news_detail2',
+        meta:{title: '资讯详情_郧西县丰源供水有限公司'},
+        component: () => import('../../views/pages/news_detail2.vue')
+    },
 ]

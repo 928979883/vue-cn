@@ -2,8 +2,8 @@
   <div class="CommonHeader">
     <div class="logo">
       <router-link to="/">
-        <img src="../../assets/images/logo.png" alt="">
-        郧西县丰源供水有限公司
+        <img src="../../assets/images/logo2.png" alt="">
+        <div>郧西县丰源供水有限公司</div>
       </router-link>
     </div>
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="" text-color="black">
@@ -155,9 +155,12 @@ export default {
           name:value1,
           query:{id:value2}
         }).catch(data => {  })
-        // setTimeout(function () {
-        //     window.location.reload();
-        // },50);
+        console.log()
+        if(this.$route.path == '/'+value1){
+            setTimeout(function () {
+                window.location.reload();
+            },50);
+        }
       }
     },
     computed:{
@@ -177,7 +180,7 @@ export default {
   align-items: center;
   justify-content: space-around;
   .logo{
-    width: 20%;
+    width: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -185,12 +188,9 @@ export default {
     a{
       width: 100%;
       font-weight: 600;
-      justify-content: space-around;
-      display: flex;
-      align-items: center;
     }
     img{
-      width: 60px;
+      width: 45px;
     }
   }
   .title{
