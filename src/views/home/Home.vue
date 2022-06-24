@@ -1,38 +1,76 @@
 <template lang="">
     <div class="home">
-        <div class="banner"></div>
+        <div class="banner">
+            <img src="../../assets/images/home/banner.jpg" alt="">
+            <div class="title">
+                <div class="title1">保障供水 服务为民</div>
+                <div class="title2">Ensure water supply AND serve the people</div>
+            </div>
+            <white_wave></white_wave>
+        </div>
 
-        <company_profile></company_profile>
+        <cp_template1></cp_template1>
         
         <notice></notice>
 
     </div>
 </template>
 <script>
-import company_profile from '../../components/company_profile/company_profile'
-import notice from '../../components/notice/notice'
+import cp_template1 from '@/components/company_profile/cp_template1.vue'
+import notice from '@/components/notice/notice'
+import white_wave from '@/components/wave/white_wave.vue'
 
 export default {
     name:'Home',
     data() {
         return {
-
         }
     },
     components:{
-        company_profile,
+        cp_template1,
         notice,
+        white_wave,
     },
 }
 </script>
 <style lang="less" scoped>
 .home{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     .banner{
-        position: relative;
         width: 100%;
         height: 100vh;
         overflow: hidden;
-        background: url(../../assets/images/banner.jpg) left top / 100% no-repeat
+        position: relative;
+        img{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        img:hover {
+            transform:scale(1);
+        }
+        .title{
+            color: white;
+            position: absolute;
+            top:40%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            .title1{   
+                font-size: 50px;
+                font-weight: 600;
+                color: #ffffff;
+                line-height: 95px;
+                letter-spacing: 6.6px;
+            }
+            .title2{
+                font-size: 16px;
+                color: #ffffff;
+                line-height: 24px;
+                letter-spacing: 3.96px;
+            }
+        }
     }
 }
 </style>

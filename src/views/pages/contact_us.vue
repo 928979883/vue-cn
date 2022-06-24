@@ -1,16 +1,16 @@
 <template lang="">
-    <div class="page6">
+    <div class="contactus">
         <div class="contact">
             <div class="title">联系我们</div>
             <div class="tel">0719-6227288</div>
             <div class="worktime">工作日8:30-17:30</div>
-            <img src="../../assets/images/logo.png" alt="">
+            <img src="../../assets/images/common/logo.png" alt="">
             <div class="location">地址：郧西县城关镇人民街229号"三费"大厅</div>
             <div class="code">邮政编码：442600</div>
         </div>
         <div class="map">
             <a href="https://map.baidu.com/search/%E9%83%A7%E8%A5%BF%E5%8E%BF%E4%B8%B0%E6%BA%90%E4%BE%9B%E6%B0%B4%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E4%B8%89%E8%B4%B9%E6%9C%8D%E5%8A%A1%E5%A4%A7%E5%8E%85/@12292996.225,3871689.34,19z?querytype=s&da_src=shareurl&wd=%E9%83%A7%E8%A5%BF%E5%8E%BF%E4%B8%B0%E6%BA%90%E4%BE%9B%E6%B0%B4%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E4%B8%89%E8%B4%B9%E6%9C%8D%E5%8A%A1%E5%A4%A7%E5%8E%85&c=216&src=0&pn=0&sug=0&l=18&b=(12292254.876202831,3871393.2745285714;12293788.101845613,3872105.984885958)&from=webmap&biz_forward=%7B%22scaler%22:2,%22styles%22:%22pl%22%7D&device_ratio=2">
-                <img src="../../assets/images/map.png" alt="">
+                <img src="../../assets/images/page/map.png" alt="">
             </a>
         </div>
     </div>
@@ -21,7 +21,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.page6{
+.contactus{
     margin: 80px auto;
     width: 80%;
     display: flex;

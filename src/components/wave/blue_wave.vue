@@ -28,7 +28,7 @@ export default {
     background: #125a99;
 }
 .water-1 {
-  background: url("../../assets/images/wave_01.png") repeat-x;
+  background: url("../../assets/images//components/wave/wave_01.png") repeat-x;
   background-size: 600px;
   -webkit-animation: move_wave 30s linear infinite;
   animation: move_wave 30s linear infinite;
@@ -36,7 +36,7 @@ export default {
 
 .water-2 {
   top: 5px;
-  background: url("../../assets/images/wave_02.png") repeat-x;
+  background: url("../../assets/images//components/wave/wave_02.png") repeat-x;
   background-size: 600px;
   -webkit-animation: move_wave 30s linear infinite;
   animation: move_wave 30s linear infinite;
@@ -65,17 +65,4 @@ export default {
     transform: translateX(-50%) translateZ(0) scaleY(1);
   }
 }
-
-@keyframes wave-animation-1 {
-  0% {
-    transform: translateX(0) translateZ(0) scaleY(1);
-  }
-  50% {
-    transform: translateX(-25%) translateZ(0) scaleY(0.55);
-}
-  100% {
-    transform: translateX(-50%) translateZ(0) scaleY(1);
-  }
-}
-    
 </style>

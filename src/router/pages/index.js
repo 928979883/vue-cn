@@ -35,10 +35,10 @@ export default [
         component: () => import('../../views/pages/page5.vue')
     },
     {
-        path: '/page6',
-        name: 'page6',
+        path: '/contact_us',
+        name: 'contact_us',
         meta:{title: '联系我们_郧西县丰源供水有限公司'},
-        component: () => import('../../views/pages/page6.vue')
+        component: () => import('../../views/pages/contact_us.vue')
     },
     {
         path: '/news_detail',

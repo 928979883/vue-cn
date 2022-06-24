@@ -5,11 +5,17 @@ import jquery from 'jquery'
 import './assets/css/base/base.css'
 import router from './router'
 import './plugins/element'
+import store from "./store";
 
 Vue.prototype.$ = jquery;
 Vue.config.productionTip = false
-
 router.beforeEach((to, from, next) => {
+  // chrome
+  document.body.scrollTop = 0
+  // firefox
+  document.documentElement.scrollTop = 0
+  // safari
+  window.pageYOffset = 0
   /* 路由发生变化修改页面title */
   if (to.meta.title) {
       document.title = to.meta.title;
@@ -17,7 +23,8 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
-new Vue({
+new Vue({ 
+  store,
   router,
   render: h => h(App),
 }).$mount('#app')

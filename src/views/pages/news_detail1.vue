@@ -11,6 +11,7 @@
         <div class="content" :style="{ fontSize: postFontSize + 'px' }">
             5月31日，供水公司组成两个专班分别对四堰坪水厂、五谷梁水厂、“三费”大厅和源水管网以及城区公共供水管网进行全方位安全隐患大排查。检查过程中，四堰坪水厂和五谷梁水厂工作人员在岗，净水、消防、监控等设备运行正常；“三费”大厅疫情防控措施完善，业务办理人员均保持一米远社交安全距离；城区公共供水管网利用测漏仪和人工现场巡查，经巡查运行良好，发现两处闸阀开启/闭合困难，专班现场进行维护保养，及时消除安全隐患，保障“两考”供水安全。
         </div>
+        <img src="../../assets/images/news_detail/news1.jpg" alt="">
     </div>
 </template>
 <script>
@@ -34,6 +35,9 @@ export default {
     .news_detail{
         margin: 100px auto;
         width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .title{
             font-size: 32px;
             font-weight: 600;
@@ -41,6 +45,7 @@ export default {
             padding: 20px 0;
         }
         .detail{
+            width: 100%;
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid lightgray;
@@ -60,6 +65,9 @@ export default {
             padding: 20px;
             text-align: justify;
             line-height: 30px;
+        }
+        img{
+            width: 400px;
         }
     }
 </style>

@@ -1,17 +1,16 @@
 <template lang="">
-    <div class="CommonFooter" :class="[up ==true?'active1':'']">
-        <div class="top">
-            <router-link to="page6">
-                <div class="aboutus">关于我们 >></div>
+    <div class="CommonFooter" >
+        <div class="top" :class="[up ==true?'up_active':'']">
+            <router-link to="contact_us">
+                <img src="../../assets/images/common/logo2.png" alt="">
+                <div class="aboutus">郧西县丰源供水有限公司</div>
             </router-link>
-            <router-link to="page6">
-                <div class="contact">联系我们 >></div>
-            </router-link>
+            <div class="contact" @click="open">联系我们 >></div>
         </div>
         
-        <div class="main">
+        <div class="main" :class="[up ==true?'up_active':'']">
             <div class="left">
-                <div class="tel">服务热线：0719-6227288</div>
+                <div>服务热线：<div class="tel">0719-6227288</div></div>
                 <div class="link">
                     <p>友情链接：</p>
                     <select v-model="selected" @change="getTypeSelected" class="select">
@@ -29,31 +28,29 @@
                     </ul>
                     <ul>
                         <li>办公（投诉）电话：0719-6234820</li>
-                        <li>电子邮箱：442695648@qq.com</li>
                     </ul>
                     <ul>
                         <li>邮政编码：442600</li>
+                    </ul>
+                    <ul>
+                        <li>电子邮箱：442695648@qq.com</li>
                         <li>公司网址：www.yxfygs001.com</li>
                     </ul>
                 </div>
             </div>
 
             <div class="right">
-                <img src="../../assets/images/ewm.jpg" alt="">
+                <img src="../../assets/images/common/ewm.jpg" alt="">
+                <div>微信公众号</div>
             </div>
 
         </div>
 
         <div class="copyright">Copyright XXXXXX公司 版权所有 XXXXXXXXXXX 公网安备XXXXXXXXXXXXX号  </div>
         
-        <wave></wave>
-
     </div>
 </template>
 <script>
-import wave from '../wave/blue_wave'
-import $ from 'jquery'
-
 export default {
     data() {
         return {
@@ -70,10 +67,17 @@ export default {
         window.addEventListener('scroll',this.scrollhandle)
     },
     methods: {
+        open() {
+            this.$notify({
+                title: '热线电话',
+                message: '0719-6227288',
+                position: 'bottom-right'
+            });
+        },
         scrollhandle(){
-            let osTop =document.documentElement.scrollTop || document.body.scrollTop;
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
             let total = window.screen.availHeight+scrollTop
+            // 整个页面的高度
             let totop = document.body.scrollHeight-10
             if(total>totop){
                 this.up=true;
@@ -89,7 +93,6 @@ export default {
         },
     },
     components:{
-        wave,
     },
 }
 </script>
@@ -99,54 +102,57 @@ export default {
     }
 </style>
 <style lang="less" scoped>
-/* 渐显动画 */
-@keyframes wrapper-gradient {
-    0% {transform: translateY(100%);}
-    100% {transform: translateY(0);}
-}
-.active1{
-    visibility: visible !important;
-    animation: wrapper-gradient .8s linear;
-}
 .CommonFooter{
-    border-top: #005fa3 3px solid;
-    visibility:hidden;
+    overflow: hidden;
+    background-color: #F2F1F1;
     position: relative;
-    padding-bottom: 80px;
-    padding-top: 20px;
+    padding-top: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    .copyright{
-        margin: auto;
-        width: 100%;
-    }
+    height: 350px;
+    font-weight: 100;
     .top{
-        width: 80%;
+        width: 65%;
         display: flex;
+        align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid lightgray; 
         .contact{
+            font-size: 18px;
+            cursor: pointer;
             padding: 10px 0;
         }
-        .aboutus{
-            padding: 10px 0;
+        a{
+            display: flex;
+            align-items: center;
+            img{
+                width: 50px;
+                padding: 10px;
+            }
+            .aboutus{
+                font-size: 18px;
+                font-weight: 600;
+                cursor: pointer;
+                padding: 10px 0;
+            }
         }
     }
     .main{
         padding: 20px 0;
         display: flex;
         align-items: center;
-        width: 80%;
-        justify-content: space-around;
+        width: 65%;
+        justify-content: space-between;
         position: relative;
         .left{
-            width: 25%;
+            width: 20%;
             text-align: initial;
             .tel{
-                padding: 5px 0;
+                font-size: 30px;
+                padding: 5px 0 20px 0;
+                font-weight: 600;
             }
             .link{
                 padding: 5px 0;
@@ -160,13 +166,13 @@ export default {
             }
         }
         .middle{
-            width: 55%;
+            width: 45%;
             .info{
                 height: 100%;
                 ul{
                     display: flex;
                     justify-content: space-between;
-                    padding: 10px 0;
+                    padding: 5px 0;
                     li{
                         display: flex;
                     }
@@ -175,22 +181,23 @@ export default {
 
         }
         .right{
-            width:200px;
-            height:200px;
-            overflow:hidden;
+            text-align: center;
+            font-size: 12px;
+            line-height: 25px;
+            letter-spacing: 4.2px;
             img{
-                width:200px;
-                height:200px;
-                transition:all .4s;
+                width:150px;
+                height:150px;
             }
         }
-        .right img:hover {
-            transform:scale(1.2);
-        }
-        .copyright{
-                position: absolute;
-                bottom: 0;
-            }
+    }
+    .copyright{
+        position: absolute;
+        bottom: 10px;
+        font-size: 14px;
+        color: #939292;
+        left: 50%;
+        transform:translate(-50%,-50%);
     }
 }
 </style>

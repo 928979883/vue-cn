@@ -1,149 +1,291 @@
 <template lang="">
-    <el-container>
-        <el-header style="height: auto;">
-            <div class="banner">
-                <!-- <img src="" alt=""> -->
-                Page1-Banner
+  <div>
+    <div class="banner" >
+      <!-- <img src="" alt=""> -->
+      <div class="page_title">
+        <div class="zh_title">公司简介</div>
+        <div class="en_title">Company profile</div>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="main">
+        <div class="nav">
+            <a @click="goAuchor('#content1')" href="javascript:void(0)">公司概况</a>
+            <a @click="goAuchor('#content2')" href="javascript:void(0)">班子分工</a>
+            <a @click="goAuchor('#content3')" href="javascript:void(0)">科室组成</a>
+            <a @click="goAuchor('#content4')" href="javascript:void(0)">员工风采</a>
+        </div>
+        <cp_template2 id="content1"></cp_template2>
+
+        <cp_template2 id="content2"></cp_template2>
+        
+        <div class="content3" id="content3">
+            <separator :title="title1"></separator>
+            <div class="content3_main">
+                <ul>
+                    <li>
+                      <img src="../../assets/images/icon/kszc1.png" alt="">
+                      <div class="title">生产安全保卫科</div>
+                    </li>
+                    <li>
+                      <img src="../../assets/images/icon/kszc2.png" alt="">
+                      <div class="title">财务科</div>
+                    </li>
+                    <li>
+                      <img src="../../assets/images/icon/kszc3.png" alt="">
+                      <div class="title">计量管理科</div>
+                    </li>
+                    <li>
+                      <img src="../../assets/images/icon/kszc4.png" alt="">
+                      <div class="title">稽查队</div>
+                    </li>
+                </ul>
+                <ul>
+                  <li>
+                    <img src="../../assets/images/icon/kszc5.png" alt="">
+                    <div class="title">安装维修公司</div>
+                  </li>
+                  <li>
+                    <img src="../../assets/images/icon/kszc6.png" alt="">
+                    <div class="title">经营科</div>
+                  </li>
+                  <li>
+                    <img src="../../assets/images/icon/kszc7.png" alt="">
+                    <div class="title">用水管理科</div>
+                  </li>
+                  <li>
+                    <img src="../../assets/images/icon/kszc8.png" alt="">
+                    <div class="title">办公室</div>
+                  </li>
+              </ul>
             </div>
-        </el-header>
-        <el-main>
-            <div class="box1">
-                <el-tabs v-model="activeName" @tab-click="handleClick">
-                    <el-tab-pane label="公司概况" name=0>
-                        <div class="content1">
-                            郧西县丰源供水有限公司自2002年10月组建成立，由政府出资控股， 2007年 4月3日经县人民政府西政发【2007】9号文件批复，县城市管理执法局为城市 供水行政主管部门，于2009年6月正式将供水公司从县国资公司的管理、经营 资产全部移交县城市管理局，主要职责承担城区工业、居民生活、消防、环保 等行业的用水、供水任务。公司现有职工66人，内设八个职能科室，即办公 室、财务科、经营科、生产安全保卫科、用水管理科、计量管理科、安装维修 公司、监察科。 公司占地57406平方米，现有固定资产1.1亿（含新建四堰坪水厂和源水管网）， 供水生产设施三处，日供水能力5.5万吨（含新水厂3万吨）。源水为天河电站 库水，源水管网为全封闭Φ1000mm玻璃钢夹砂和水泥钢套管，全长12.3km， 城区供水面积35km2，城区供水管网总长89km，城区供水管网普及率达99%， 水质综合合格率达99%以上，管网服务水压平均为0.4MPa，供水人口为17万 人（最新人口普查数据）。
-                        </div>
-                    </el-tab-pane>
-                    <el-tab-pane label="班子分工" name=1>描述单位领导管理范围</el-tab-pane>
-                    <el-tab-pane label="科室组成" name=2>
-                        <img src="../../assets/images/kszc.png" alt="" class="content3">
-                    </el-tab-pane>
-                    <el-tab-pane label="员工风采" name=3>
-                        <div class="content4">
-                            <ul>
-                                <li>
-                                    <img src="../../assets/images/ygfc1.jpg" alt="">
-                                    <div class="title">安装维修公司在天河金街管道安装作业</div>
-                                </li>
-                                <li>
-                                    <img src="../../assets/images/ygfc2.jpg" alt="">
-                                    <div class="title">公司专题部署高考/中考期间供水保障工作</div>
-                                </li>
-                                <li>
-                                    <img src="../../assets/images/ygfc3.jpg" alt="">
-                                    <div class="title">化验人员在郧西一中抽检水样</div>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <img src="../../assets/images/ygfc4.jpg" alt="">
-                                    <div class="title">公司组织经营科全体员工参加反电信诈骗培训活动</div>
-                                </li>
-                                <li>
-                                    <img src="../../assets/images/ygfc5.jpg" alt="">
-                                    <div class="title">2021.8.29牵牛大道1000mm主供水管道因山体滑坡断裂抢修现场</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </el-tab-pane>
-                  </el-tabs>
+        </div>
+        <div class="content4" id="content4">
+            <separator :title="title2"></separator>
+            <div class="indicator">
+              <img src="../../assets/images/icon/prev.png" alt="" class="icon" @click="prev">
+              <img src="../../assets/images/icon/next.png" alt="" class="icon" @click="next">
             </div>
-        </el-main>
-      </el-container>
+            <div class="lunbo">
+              <el-carousel 
+                indicator-position="none" 
+                height="500px"
+                :autoplay="false" 
+                @change="((index, next) => {change(index, next)})"
+                ref="change"
+                >
+                <el-carousel-item v-for="item in imgList" :key="item.index">
+                    <img :src="item.url" alt="">
+                </el-carousel-item>
+              </el-carousel>
+            </div>
+            <div class="images" >
+              <div class="item" v-for="(item,index) in imgList" >
+                <img :src="item.url" alt="" :class="[select == index ? 'selected':'']">
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
 </template>
 <script>
+import cp_template2 from '../../components/company_profile/cp_template2'
+import separator from '@/components/separator/separator.vue';
+
 export default {
-    data() {
-        return {
-            activeName: '1',
-        }
+  data() {
+    return {
+        select:'0',
+        title1:'科室组成',
+        title2:'员工风采',
+        imgList:[
+                {
+                    url:require("../../assets/images/page/ygfc1.jpg"),
+                    title:'安装维修公司在天河金街管道安装作业'
+                },
+                {
+                    url:require("../../assets/images/page/ygfc2.jpg"),
+                    title:'公司专题部署高考/中考期间供水保障工作'
+                },
+                {
+                    url:require("../../assets/images/page/ygfc3.jpg"),
+                    title:'化验人员在郧西一中抽检水样'
+                },
+                {
+                    url:require("../../assets/images/page/ygfc4.jpg"),
+                    title:'公司组织经营科全体员工参加反电信诈骗培训活动'
+                },
+                {
+                    url:require("../../assets/images/page/ygfc5.jpg"),
+                    title:'2021.8.29牵牛大道1000mm主供水管道因山体滑坡断裂抢修现场'
+                },
+            ]
+    };
+  },
+  mounted() {
+    window.vue = this
+    var value = Number(this.$route.query.id);
+    var id = "#content" + (value + 1);
+    this.goAuchor(id);
+  },
+  methods: {
+    prev(){
+      this.$refs.change.prev()
     },
-    created() {
-        var value =String(this.$route.query.id)
-        this.activeName = value;
+    next(){
+      this.$refs.change.next()
     },
-    methods: {
-      handleClick(tab, event) {
-        console.log(tab, event);
-      },
+    goAuchor(id) {
+      document.querySelector(id).scrollIntoView({
+        block: "start",
+        behavior: "smooth",
+      });
+    },
+    change (index, next) {
+      this.select=index
+      console.log('index'+index, 'next'+next);
     }
-}
+  },
+  components: {
+    separator,
+    cp_template2,
+  },
+};
 </script>
-<style>
-    .el-tabs__nav-scroll{
-        padding-left: 200px;
-    }
-    .el-tabs__item{
-        font-size: 22px;
-        margin: 15px 0;
-    }
-</style>
 <style lang="less" scoped>
-    .el-header{
-        padding: 0;
+.selected{
+  padding: 30px !important;
+}
+.banner {
+  background-color: #005fa3;
+  margin-top: 80px;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  img {
+    width: 100%;
+  }
+  .page_title {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+    .zh_title {
+      font-size: 66px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 95px;
+      letter-spacing: 6.6px;
     }
-    .banner{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 80px;
-        overflow: hidden;
-        width: 100%;
-        height: 300px;
-        background-color: lightblue;
-        img{
+    .en_title {
+      font-size: 18px;
+      color: #ffffff;
+      line-height: 24px;
+      letter-spacing: 3.96px;
+    }
+    .line {
+      margin: 30px auto;
+      width: 80px;
+      height: 6px;
+      background: #ffffff;
+    }
+  }
+}
+.main {
+    padding: 50px 0;
+    .nav {
+        margin: auto;
+        width: 65%;
+        border-bottom: 1px lightgray solid;
+        font-size: 20px;
+        text-align: left;
+        height: 60px;
+        a {
+        line-height: 60px;
+        padding-bottom: 12px;
+        margin-right: 30px;
+        transition: all 0.4s;
+        color: #666;
+        }
+        a:hover {
+        font-size: 26px;
+        font-weight: 600;
+        color: #005fa3;
+        transition: all 0.4s;
+        border-bottom: 2px solid #005fa3;
+        }
+    }
+    .content3 {
+        width: 65%;
+        margin: auto;
+        .content3_main{
+          ul{
+            margin-bottom: 100px;
+            display: flex;
+            justify-content: center;
+            li{
+              width: 20%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              .title{
+                font-size: 16px;
+                line-height: 32px;
+              }
+              img{
+                width: 50px;
+              }
+            }
+          }
+        }
+    }
+    .content4 {
+        position: relative;
+        width: 65%;
+        padding: 30px 0;
+        margin: auto;
+        .indicator{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 450px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .icon{
+              width: 50px;
+            }
+          }
+        .lunbo{
+          padding: 30px 0;
+          width: 70%;
+          margin: auto;
+
+          img{
             width: 100%;
             height: 100%;
-            transform: scale(1);
-            object-fit: cover;
-            animation: img_1 1.2s linear 1;
-        }
-    }
-    .box1{
-        .content1{
-            width: 90%;
-            margin: auto;
-            text-align: justify;
-            text-indent:2em;
-            line-height: 30px;
-            font-size: 18px;
-        }
-        .content3{
-            width: 500px;
-        }
-        .content4{
-            padding: 30px 0;
-            ul{
-                padding: 10px 0;
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                li{
-                    border: 1px solid lightgray;
-                    border-radius: 10px;
-                    width: 28%;
-                    overflow: hidden;
-                    img{
-                        border-radius: 10px 10px 0 0;
-                        width: 100%;
-                        height: 100%;
-                        transition:all .4s;
-                    }
-                    .title{
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        padding: 10px;
-                    }
-                }
-                li img:hover {
-                    cursor: pointer;
-                    transform:scale(1.3);
-                }
-            }
-            ul:last-child{
-                /* justify-content: left; */
+          }
+
+          .profile{
+                font-size: 14px;
+                position: absolute;
+                bottom: 0px;
+                color:#666;
             }
         }
+        .images{
+          display: flex;
+          justify-content: center;
+          .item{
+            padding: 20px;
+              img{
+                width: 180px;
+                transition:all .4s;
+              }
+          }
+        }
     }
+}
 </style>

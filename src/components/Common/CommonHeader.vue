@@ -1,24 +1,20 @@
 <template lang="">
-  <div class="CommonHeader">
+  <div class="CommonHeader" :class="[showlogo ==true?'active':'']" >
     <div class="logo">
       <router-link to="/">
-        <img src="../../assets/images/logo2.png" alt="">
-        <div>郧西县丰源供水有限公司</div>
+        <img src="../../assets/images/common/logo2.png" alt="">郧西县丰源供水有限公司
       </router-link>
     </div>
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="" text-color="black">
+    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" background-color="" text-color="black">
 
-      <el-menu-item v-for="item in noChildren" :index="item.name" :key="item.name" @click="clickMenu(item.path)">{{item.label}}</el-menu-item>
+      <el-menu-item v-for="item in noChildren" :index="item.name" :key="item.name" @click="clickMenu(item)">{{item.label}}</el-menu-item>
 
       <el-submenu v-for="item in hasChildren" :index="item.label" :key="item.index" >
         <template slot="title" >{{item.label}}</template>
-        <el-menu-item v-for="(subItem,subIndex) in item.children" :key="subItem.name" :index="subItem.name" @click="clickMenu(subItem.path,subIndex)" >{{subItem.label}}</el-menu-item>
+        <el-menu-item v-for="(subItem,subIndex) in item.children" :key="subItem.name" :index="subItem.name" @click="clickMenu(subItem,subIndex)" >{{subItem.label}}</el-menu-item>
       </el-submenu>
 
     </el-menu>
-    <div class="title">
-      <img src="../../assets/images/logo1.png" alt="">
-    </div>
   </div>
 
 </template>
@@ -46,11 +42,12 @@
 export default {
     data() {
         return {
+            showlogo:true,
             activeIndex: '',
             menu:[
             {
-              path: 'Home',
-              name: 'Home',
+              path: 'home',
+              name: 'home',
               label: '首页',
             },
             {
@@ -146,23 +143,45 @@ export default {
             ]
         }
     },
+    watch: {
+        '$route.path': function (newVal, oldVal) {
+            if(newVal=='/'){
+                this.showlogo=true;
+            }else{
+                this.showlogo=false;
+            }
+        }
+    },
+    mounted() {
+      window.vue = this
+      window.addEventListener('scroll',this.scrollhandle)
+    },
     methods: {
-      handleSelect(key, keyPath) {
-        // console.log(key, keyPath);
-      },
-      clickMenu(value1,value2){
+      scrollhandle(){
+        if(this.$route.path=='/'){
+            if(window.scrollY>0){
+                this.showlogo=false;
+            }else{
+                this.showlogo=true;
+            }
+        }
+    },
+      clickMenu(item,value2){
         this.$router.push({
-          name:value1,
+          name:item.path,
           query:{id:value2}
         }).catch(data => {  })
-        console.log()
-        if(this.$route.path == '/'+value1){
+        this.$store.commit('selectMenu',item)
+        if(this.$route.path == '/'+item.path){
             setTimeout(function () {
                 window.location.reload();
             },50);
         }
       }
     },
+    destroyed () {
+      window.removeEventListener('scroll', this.scrollhandle)
+  },
     computed:{
       noChildren(){
         return this.menu.filter(item => !item.children)
@@ -174,30 +193,39 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+.active{
+    transition:  1s;
+    background-color: rgba(255,255,255, 0.5) !important;
+    /* top: 5% !important;
+    left: 5% !important;
+    width: 90% !important;
+    border-radius: 10px !important; */
+    box-shadow:none !important;
+}
 .CommonHeader{
-  height: 100%;
+  transition:  1s;
+  background-color: white;
+  box-shadow: 0px 10px 10px rgb(183 183 183 / 50%);
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  height: 80px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   .logo{
-    width: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
+    width: 25%;
+    font-size: 18px;
     a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       font-weight: 600;
     }
     img{
-      width: 45px;
-    }
-  }
-  .title{
-    width: 20%;
-    font-size: 26px;
-    img{
-      height: 60px;
+      height: 55px;
+      margin-right: 10px;
     }
   }
 }

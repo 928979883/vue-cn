@@ -13,7 +13,7 @@
             2022 年 5 月 15 日-21 日是 2022 年全国城市节约用水宣传周，今年的宣传主题为“建设节水型城市，推动绿色低碳发展”。
             全国城市节水宣传周又叫节水周。为了提高城市居民节水意识，从1992年开始，国家规定每年5月15日所在的那一周为“全国城市节水宣传周”。宣传周旨在动员广大市民共同关注水资源，在日常生活中养成良好的用水习惯，促进生态环境改善，人与水和谐发展，共同建设碧水家园。
         </div>
-        <img src="../../assets/images/news2.jpg" alt="">
+        <img src="../../assets/images/news_detail/news2.jpg" alt="">
     </div>
 </template>
 <script>
@@ -37,6 +37,9 @@ export default {
     .news_detail{
         margin: 100px auto;
         width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .title{
             font-size: 32px;
             font-weight: 600;
@@ -44,6 +47,7 @@ export default {
             padding: 20px 0;
         }
         .detail{
+            width: 100%;
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid lightgray;
@@ -65,7 +69,7 @@ export default {
             line-height: 30px;
         }
         img{
-            width: 500px;
+            width: 400px;
         }
     }
 </style>
