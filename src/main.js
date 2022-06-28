@@ -6,6 +6,7 @@ import './assets/css/base/base.css'
 import router from './router'
 import './plugins/element'
 import store from "./store";
+import BaiduMap from  "vue-baidu-map"
 
 Vue.prototype.$ = jquery;
 Vue.config.productionTip = false
@@ -22,6 +23,7 @@ router.beforeEach((to, from, next) => {
   }
   next();
 });
+Vue.use(BaiduMap, {ak:  "Wz1Q79sMOCqTDgrW8gTVmWmrQQLHWyxR"});
 
 new Vue({ 
   store,

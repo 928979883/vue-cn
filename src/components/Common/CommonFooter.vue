@@ -1,5 +1,7 @@
 <template lang="">
     <div class="CommonFooter" >
+        <div class="line"></div>
+
         <div class="top" :class="[up ==true?'up_active':'']">
             <router-link to="contact_us">
                 <img src="../../assets/images/common/logo2.png" alt="">
@@ -56,8 +58,8 @@ export default {
         return {
             up:false,
             typeList:[
-                {id:1,name:'网站一',},
-                {id:2,name:'网站二',},
+                {id:1,name:'鄂汇办',},
+                {id:2,name:'县人民政府网',},
             ],
             selected:''
         }
@@ -85,9 +87,9 @@ export default {
         },
         getTypeSelected(){
             if(this.selected==1){
-                window.open('http://www.baidu.com')
+                window.open('http://zwfw.hubei.gov.cn/')
             }else{
-                window.open('http://www.baidu.com')
+                window.open('http://www.yunxi.gov.cn/')
             }
             console.log(this.selected)
         },
@@ -113,6 +115,13 @@ export default {
     align-items: center;
     height: 350px;
     font-weight: 100;
+    .line{
+        position: absolute;
+        top: 0;
+        background-color: #346BCF;
+        height: 8px;
+        width: 100%;
+    }
     .top{
         width: 65%;
         display: flex;

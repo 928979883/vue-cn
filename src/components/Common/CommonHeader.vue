@@ -5,7 +5,7 @@
         <img src="../../assets/images/common/logo2.png" alt="">郧西县丰源供水有限公司
       </router-link>
     </div>
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" background-color="" text-color="black">
+    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
 
       <el-menu-item v-for="item in noChildren" :index="item.name" :key="item.name" @click="clickMenu(item)">{{item.label}}</el-menu-item>
 
@@ -19,12 +19,6 @@
 
 </template>
 <style lang="less" scoped>
-  .el-menu-demo .el-menu--horizontal .el-menu{
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    border: none;
-  }
   .el-menu{
     background-color: rgba(255,255,255, 0) ;
   }
@@ -32,10 +26,14 @@
     border: none;
   }
   .el-menu--horizontal>.el-menu-item{
-    font-size: 20px;
+    font-size: 18px;
+    padding-top: 2px;
+    color: #666 !important;
   }
   .el-menu--horizontal>.el-submenu /deep/.el-submenu__title{
-    font-size: 20px !important;
+    line-height: 64px;
+    font-size: 18px;
+    color: #666 !important;
   }
 </style>
 <script>

@@ -29,10 +29,20 @@ body{
     font-family: Source Han Sans CN;
 }
 @keyframes wrapper-gradient {
-    0% {transform: translateY(100%);}
-    100% {transform: translateY(0);}
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    80% {
+        opacity: .5;
+        transform: translateY(20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .up_active{
     visibility: visible !important;
-    animation: wrapper-gradient .8s linear;
+    animation: wrapper-gradient 1s linear;
 }

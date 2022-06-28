@@ -1,13 +1,7 @@
 <template lang="">
-  <div>
-    <div class="banner" >
-      <!-- <img src="" alt=""> -->
-      <div class="page_title">
-        <div class="zh_title">公司简介</div>
-        <div class="en_title">Company profile</div>
-        <div class="line"></div>
-      </div>
-    </div>
+  <div class="page1">
+    <banner :img="img" :zh_title="zh_title" :en_title="en_title"></banner>
+    
     <div class="main">
         <div class="nav">
             <a @click="goAuchor('#content1')" href="javascript:void(0)">公司概况</a>
@@ -17,7 +11,7 @@
         </div>
         <cp_template2 id="content1"></cp_template2>
 
-        <cp_template2 id="content2"></cp_template2>
+        <separator :title="title3" id="content2"></separator>
         
         <div class="content3" id="content3">
             <separator :title="title1"></separator>
@@ -79,6 +73,9 @@
                 </el-carousel-item>
               </el-carousel>
             </div>
+            <div class="content4_detail" v-for="(item,index) in imgList">
+              <div v-if="select == index" class="item_title">{{item.title}}</div>
+            </div>
             <div class="images" >
               <div class="item" v-for="(item,index) in imgList" >
                 <img :src="item.url" alt="" :class="[select == index ? 'selected':'']">
@@ -91,13 +88,17 @@
 <script>
 import cp_template2 from '../../components/company_profile/cp_template2'
 import separator from '@/components/separator/separator.vue';
-
+import banner from '@/components/banner/banner.vue';
 export default {
   data() {
     return {
+        img:require('../../assets/images/page/page1_banner.png'),
+        zh_title:'公司简介',
+        en_title:'COMPANY PROFILE',
         select:'0',
         title1:'科室组成',
         title2:'员工风采',
+        title3:'班子分工',
         imgList:[
                 {
                     url:require("../../assets/images/page/ygfc1.jpg"),
@@ -143,55 +144,21 @@ export default {
     },
     change (index, next) {
       this.select=index
-      console.log('index'+index, 'next'+next);
+      // console.log('index'+index, 'next'+next);
     }
   },
   components: {
     separator,
     cp_template2,
+    banner,
   },
 };
 </script>
 <style lang="less" scoped>
 .selected{
-  padding: 30px !important;
+  border: 5px solid #3FC9FE;
 }
-.banner {
-  background-color: #005fa3;
-  margin-top: 80px;
-  width: 100%;
-  height: 500px;
-  position: relative;
-  img {
-    width: 100%;
-  }
-  .page_title {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    text-align: center;
-    .zh_title {
-      font-size: 66px;
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 95px;
-      letter-spacing: 6.6px;
-    }
-    .en_title {
-      font-size: 18px;
-      color: #ffffff;
-      line-height: 24px;
-      letter-spacing: 3.96px;
-    }
-    .line {
-      margin: 30px auto;
-      width: 80px;
-      height: 6px;
-      background: #ffffff;
-    }
-  }
-}
+
 .main {
     padding: 50px 0;
     .nav {
@@ -209,11 +176,11 @@ export default {
         color: #666;
         }
         a:hover {
-        font-size: 26px;
-        font-weight: 600;
-        color: #005fa3;
-        transition: all 0.4s;
-        border-bottom: 2px solid #005fa3;
+          font-size: 26px;
+          font-weight: 600;
+          color: #005fa3;
+          transition: all 0.4s;
+          border-bottom: 2px solid #005fa3;
         }
     }
     .content3 {
@@ -259,15 +226,13 @@ export default {
             }
           }
         .lunbo{
-          padding: 30px 0;
           width: 70%;
           margin: auto;
-
+          padding-top: 20px;
           img{
             width: 100%;
             height: 100%;
           }
-
           .profile{
                 font-size: 14px;
                 position: absolute;
@@ -275,14 +240,26 @@ export default {
                 color:#666;
             }
         }
+        .content4_detail{
+            text-align: center;
+            width: 70%;
+            margin: auto;
+            .item_title{
+              border-radius: 0 0 10px 10px;
+              border: 1px solid lightgray;
+              padding: 10px 0;
+            }
+          }
         .images{
+          height: 200px;
           display: flex;
           justify-content: center;
+          align-items: center;
           .item{
-            padding: 20px;
+              padding: 10px;
               img{
                 width: 180px;
-                transition:all .4s;
+                transition:all .3s;
               }
           }
         }

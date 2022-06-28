@@ -13,11 +13,11 @@
                 室、财务科、经营科、生产安全保卫科、用水管理科、计量管理科、安装维修
                 公司、监察科。
                 公司占地57406平方米，现有固定资产1.1亿（含新建四堰坪水厂和源水管网），
-                供水生产设施三处，日供水能力5.5万吨（含新水厂3万吨）。源水为天河电站
-                库水，源水管网为全封闭Φ1000mm玻璃钢夹砂和水泥钢套管，全长12.3km，
-                城区供水面积35km2，城区供水管网总长89km，城区供水管网普及率达99%，
-                水质综合合格率达99%以上，管网服务水压平均为0.4MPa，供水人口为17万
-                人（最新人口普查数据）。
+                供水生产设施三处，日供水能力5.5万吨（含新水厂3万吨）...
+                <!-- 源水为天河电站库水，源水管网为全封闭Φ1000mm玻璃钢夹砂和水泥钢套管，
+                全长12.3km，城区供水面积35km2，城区供水管网总长89km，城区供水管网
+                普及率达99%，水质综合合格率达99%以上，管网服务水压平均为0.4MPa，
+                供水人口为17万人（最新人口普查数据）。 -->
                 <router-link to="/page1">
                     <div class="view_details">
                         <div class="to1">查看详情</div>
@@ -26,7 +26,7 @@
                 </router-link>
             </div>
             <div class="img">
-                <el-carousel indicator-position="outside" height="400px" :autoplay="false" >
+                <el-carousel indicator-position="outside" height="300px" :autoplay="false" >
                     <el-carousel-item v-for="item in imgList" :key="item.index">
                         <img :src="item.url" alt="">
                         <div class="profile">{{item.title}}</div>
@@ -43,6 +43,10 @@
     }
     .el-carousel__indicators--outside button{
         background-color: #3FC9FE;
+    }
+    .el-carousel__indicators--outside{
+        border: 1px solid lightgray;
+        border-radius: 0 0 5px 5px;
     }
 </style>
 <script>
@@ -97,13 +101,14 @@ export default {
 <style lang="less" scoped>
 .company_profile{
     visibility:hidden;
-    padding: 50px 0;
+    padding: 30px 0 100px 0;
     width: 65%;
     margin: auto;
     overflow: hidden;
     .box1-content{
         display: flex;
         justify-content: space-between;
+        position: relative;
         .detail{
             height: 100%;
             width: 48%;
@@ -111,7 +116,9 @@ export default {
             line-height: 30px;
             text-align: justify;
             .view_details{
-                margin-top: 25px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
                 color: white;
                 line-height: 40px;
                 display: flex;
@@ -132,8 +139,7 @@ export default {
             }
         }
         .img{
-            box-shadow: 0 0 30px rgb(94 158 255 / 20%);
-            width:48%;
+            width:45%;
             position: relative;
             img{
                 cursor: pointer;

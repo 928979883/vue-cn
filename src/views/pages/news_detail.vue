@@ -18,7 +18,8 @@
 export default {
     data() {
         return {
-            postFontSize:"20"
+            // 默认字体大小
+            postFontSize:"18"
         }
     },
     methods: {

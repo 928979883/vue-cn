@@ -1,70 +1,63 @@
 <template lang="">
     <div class="contactus">
+        <banner :img="img" :zh_title="zh_title" :en_title="en_title"></banner>
+
         <div class="contact">
-            <div class="title">联系我们</div>
-            <div class="tel">0719-6227288</div>
-            <div class="worktime">工作日8:30-17:30</div>
-            <img src="../../assets/images/common/logo.png" alt="">
-            <div class="location">地址：郧西县城关镇人民街229号"三费"大厅</div>
-            <div class="code">邮政编码：442600</div>
+            <div class="title">联系方式</div>
+            <div class="company">郧西县丰源供水有限公司</div>
+            <div>公司地址：郧西县城关镇人民街229号"三费"大厅</div>
+            <div>服务热线：0719-6227288</div>
+            <div>邮政编码：442600</div>
+            <div>电子邮箱：442695648@qq.com</div>
+            <div>公司网址：www.yxfygs001.com</div>
+            <div>办公（投诉）电话：0719-6234820</div>
         </div>
-        <div class="map">
-            <a href="https://map.baidu.com/search/%E9%83%A7%E8%A5%BF%E5%8E%BF%E4%B8%B0%E6%BA%90%E4%BE%9B%E6%B0%B4%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E4%B8%89%E8%B4%B9%E6%9C%8D%E5%8A%A1%E5%A4%A7%E5%8E%85/@12292996.225,3871689.34,19z?querytype=s&da_src=shareurl&wd=%E9%83%A7%E8%A5%BF%E5%8E%BF%E4%B8%B0%E6%BA%90%E4%BE%9B%E6%B0%B4%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E4%B8%89%E8%B4%B9%E6%9C%8D%E5%8A%A1%E5%A4%A7%E5%8E%85&c=216&src=0&pn=0&sug=0&l=18&b=(12292254.876202831,3871393.2745285714;12293788.101845613,3872105.984885958)&from=webmap&biz_forward=%7B%22scaler%22:2,%22styles%22:%22pl%22%7D&device_ratio=2">
-                <img src="../../assets/images/page/map.png" alt="">
-            </a>
-        </div>
+
+        <Map></Map>
+
     </div>
 </template>
 <script>
+import banner from '@/components/banner/banner.vue'
+import Map from '@/components/map/map.vue'
 export default {
-    
+    data() {
+        return {
+            img:require('../../assets/images/page/contact_banner.png'),
+            zh_title:'联系我们',
+            en_title:'CONTACT US',
+        }
+    },  
+    components:{
+        banner,
+        Map,
+    }
 }
 </script>
 <style lang="less" scoped>
 .contactus{
     margin: 80px auto;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     .contact{
-        margin-top: 30px;
-        width: 30%;
+        width: 65%;
         text-align: initial;
+        margin: 50px auto;
+        font-size: 18px;
+        line-height: 40px;
+        letter-spacing: 0.9px;
         .title{
-            font-size: 48px;
-            font-weight: 400;
-            text-align: LEFT;
-            color: #333;
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 32px;
+            border-bottom: 3px solid #3FC9FE;
+            widows: auto;
+            display: inline-block;
+            padding-bottom: 10px;
             margin-bottom: 10px;
         }
-        .tel{
-            font-size: 36px;
-            font-weight: 400;
-            text-align: LEFT;
-            color: #333;
-        }
-        .worktime{
+        .company{
+            font-size: 20px;
+            line-height: 32px;
             margin-bottom: 30px;
-            width: 157px;
-            height: 28px;
-            line-height: 28px;
-            text-align: center;
-            border: 1px solid #eee;
-            border-radius: 2px;
-        }
-        img{
-            width: 50%;
-        }
-        .location{
-            margin-bottom: 15px;
-        }
-    }
-    .map{
-        margin-top: 50px;
-        width: 70%;
-        img{
-            width: 100%;
         }
     }
 }
